@@ -1,5 +1,6 @@
 import java.util.*;
 
+// Main Class for System Execution
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -13,8 +14,8 @@ public class Main {
         system.loadSoftwareEngineeringData(yearLevel);
 
         // Program oluşturma ve diğer işlemleri çalıştır
-        system.generateSchedule();  // Programı oluştur
-        system.checkConstraints();  // Kısıtlamaları kontrol et
+        system.generateSchedule(); // Programı oluştur
+        system.checkConstraints(); // Kısıtlamaları kontrol et
         system.resolveConflicts(); // Çakışmaları çöz
 
         // Tabloyu terminalde yazdırma
@@ -70,44 +71,69 @@ class BeePlanSystem {
 
     private void addFirstYearCourses() {
         DepartmentSchedule firstYear = new DepartmentSchedule("1st Year", "2024-2025", "SENG");
-        firstYear.addCourse(new Course("PHYS 131", "Physics I", 1, 3, 2, true, 40, "B. Avenoglu", "Monday", "09:20-10:10"));
-        firstYear.addCourse(new Course("PHYS 131", "Physics I", 1, 3, 2, true, 40, "B. Avenoglu", "Monday", "10:20-11:10"));
-        firstYear.addCourse(new Course("ENG 121", "Academic English I", 1, 3, 0, true, 40, "B. Çelikkale", "Tuesday", "09:20-12:20"));
-        firstYear.addCourse(new Course("MATH 157", "Calculus I", 1, 4, 0, true, 40, "S. Esmelioglu", "Monday", "13:20-15:20"));
-        firstYear.addCourse(new Course("SENG 101", "Computer Programming I", 1, 3, 2, false, 40, "S. K. Tunç", "Tuesday", "12:00-13:20"));
-        firstYear.addCourse(new Course("SENG 102", "Computer Programming II", 1, 3, 2, false, 40, "S. K. Tunç", "Thursday", "09:20-11:20"));
+        firstYear.addCourse(
+                new Course("PHYS 131", "Physics I", 1, 3, 2, true, 40, "B. Avenoglu", "Monday", "09:20-10:10"));
+        firstYear.addCourse(
+                new Course("PHYS 131", "Physics I", 1, 3, 2, true, 40, "B. Avenoglu", "Monday", "10:20-11:10"));
+        firstYear.addCourse(new Course("ENG 121", "Academic English I", 1, 3, 0, true, 40, "B. Çelikkale", "Tuesday",
+                "09:20-12:20"));
+        firstYear.addCourse(
+                new Course("MATH 157", "Calculus I", 1, 4, 0, true, 40, "S. Esmelioglu", "Monday", "13:20-15:20"));
+        firstYear.addCourse(new Course("SENG 101", "Computer Programming I", 1, 3, 2, false, 40, "S. K. Tunç",
+                "Tuesday", "12:00-13:20"));
+        firstYear.addCourse(new Course("SENG 102", "Computer Programming II", 1, 3, 2, false, 40, "S. K. Tunç",
+                "Thursday", "09:20-11:20"));
         departmentSchedules.add(firstYear);
     }
+
     private void addSecondYearCourses() {
         DepartmentSchedule secondYear = new DepartmentSchedule("2nd Year", "2024-2025", "SENG");
-        secondYear.addCourse(new Course("PHYS 132", "Physics II", 2, 3, 2, true, 40, "Physics Instructor", "Tuesday", "09:20-12:20"));
-        secondYear.addCourse(new Course("MATH 223", "Discrete Structures", 2, 3, 0, true, 40, "Math Instructor", "Monday", "12:20-13:20"));
-        secondYear.addCourse(new Course("MATH 158", "Calculus II", 2, 4, 0, true, 40, "Math Instructor", "Wednesday", "09:20-11:20"));
-        secondYear.addCourse(new Course("HIST 201", "History of Turkish Revolution I", 2, 2, 0, true, 40, "History Instructor", "Tuesday", "13:20-14:20"));
-        secondYear.addCourse(new Course("SENG 201", "Data Structures", 2, 3, 2, false, 40, "B. Çelikkale", "Thursday", "09:20-12:20"));
-        secondYear.addCourse(new Course("SENG 203", "Discrete Structures", 2, 3, 0, false, 40, "B. Çelikkale", "Thursday", "13:20-15:20"));
-        secondYear.addCourse(new Course("SENG 206", "Software Design", 2, 3, 0, false, 40, "S. K. Tunç", "Wednesday", "13:20-15:20"));
-        secondYear.addCourse(new Course("SENG 271", "Software Project I", 2, 2, 0, false, 40, "S. K. Tunç", "Tuesday", "15:20-17:20"));
+        secondYear.addCourse(new Course("PHYS 132", "Physics II", 2, 3, 2, true, 40, "Physics Instructor", "Tuesday",
+                "09:20-12:20"));
+        secondYear.addCourse(new Course("MATH 223", "Discrete Structures", 2, 3, 0, true, 40, "Math Instructor",
+                "Monday", "12:20-13:20"));
+        secondYear.addCourse(new Course("MATH 158", "Calculus II", 2, 4, 0, true, 40, "Math Instructor", "Wednesday",
+                "09:20-11:20"));
+        secondYear.addCourse(new Course("HIST 201", "History of Turkish Revolution I", 2, 2, 0, true, 40,
+                "History Instructor", "Tuesday", "13:20-14:20"));
+        secondYear.addCourse(new Course("SENG 201", "Data Structures", 2, 3, 2, false, 40, "B. Çelikkale", "Thursday",
+                "09:20-12:20"));
+        secondYear.addCourse(new Course("SENG 203", "Discrete Structures", 2, 3, 0, false, 40, "B. Çelikkale",
+                "Thursday", "13:20-15:20"));
+        secondYear.addCourse(new Course("SENG 206", "Software Design", 2, 3, 0, false, 40, "S. K. Tunç", "Wednesday",
+                "13:20-15:20"));
+        secondYear.addCourse(new Course("SENG 271", "Software Project I", 2, 2, 0, false, 40, "S. K. Tunç", "Tuesday",
+                "15:20-17:20"));
         departmentSchedules.add(secondYear);
     }
 
     private void addThirdYearCourses() {
         DepartmentSchedule thirdYear = new DepartmentSchedule("3rd Year", "2024-2025", "SENG");
-        thirdYear.addCourse(new Course("MATH 205", "Linear Algebra", 3, 3, 0, true, 40, "Math Instructor", "Wednesday", "09:20-12:20"));
-        thirdYear.addCourse(new Course("HIST 202", "History of Turkish Revolution II", 3, 2, 0, true, 40, "History Instructor", "Friday", "10:20-11:20"));
-        thirdYear.addCourse(new Course("SENG 301", "Software Project Management", 3, 2, 2, false, 40, "S. K. Tunç", "Friday", "13:20-15:20"));
-        thirdYear.addCourse(new Course("SENG 303", "Software Testing for Quality Assurance", 3, 3, 0, false, 40, "B. Avenoglu", "Thursday", "15:00-16:20"));
-        thirdYear.addCourse(new Course("SENG 315", "Concurrent Programming", 3, 3, 0, false, 40, "B. Avenoglu", "Monday", "15:00-16:20"));
-        thirdYear.addCourse(new Course("SENG 383", "Software Project III", 3, 2, 0, false, 40, "B. Çelikkale", "Wednesday", "13:20-15:20"));
+        thirdYear.addCourse(new Course("MATH 205", "Linear Algebra", 3, 3, 0, true, 40, "Math Instructor", "Wednesday",
+                "09:20-12:20"));
+        thirdYear.addCourse(new Course("HIST 202", "History of Turkish Revolution II", 3, 2, 0, true, 40,
+                "History Instructor", "Friday", "10:20-11:20"));
+        thirdYear.addCourse(new Course("SENG 301", "Software Project Management", 3, 2, 2, false, 40, "S. K. Tunç",
+                "Friday", "13:20-15:20"));
+        thirdYear.addCourse(new Course("SENG 303", "Software Testing for Quality Assurance", 3, 3, 0, false, 40,
+                "B. Avenoglu", "Thursday", "15:00-16:20"));
+        thirdYear.addCourse(new Course("SENG 315", "Concurrent Programming", 3, 3, 0, false, 40, "B. Avenoglu",
+                "Monday", "15:00-16:20"));
+        thirdYear.addCourse(new Course("SENG 383", "Software Project III", 3, 2, 0, false, 40, "B. Çelikkale",
+                "Wednesday", "13:20-15:20"));
         departmentSchedules.add(thirdYear);
     }
 
     private void addFourthYearCourses() {
         DepartmentSchedule fourthYear = new DepartmentSchedule("4th Year", "2024-2025", "SENG");
-        fourthYear.addCourse(new Course("CENG 464", "Artificial Intelligence", 4, 3, 0, false, 40, "N. Çağıltay", "Monday", "09:20-12:20"));
-        fourthYear.addCourse(new Course("CENG 346", "Computer Graphics", 4, 3, 0, false, 40, "T. Karadeniz", "Wednesday", "09:20-12:20"));
-        fourthYear.addCourse(new Course("SENG 426", "Formal Methods in Software Development", 4, 4, 0, false, 40, "B. Çelikkale", "Thursday", "12:00-13:20"));
-        fourthYear.addCourse(new Course("SENG 491", "Graduation Project I", 4, 1, 4, false, 40, "S. Esmelioglu", "Friday", "15:00-16:20"));
+        fourthYear.addCourse(new Course("CENG 464", "Artificial Intelligence", 4, 3, 0, false, 40, "N. Çağıltay",
+                "Monday", "09:20-12:20"));
+        fourthYear.addCourse(new Course("CENG 346", "Computer Graphics", 4, 3, 0, false, 40, "T. Karadeniz",
+                "Wednesday", "09:20-12:20"));
+        fourthYear.addCourse(new Course("SENG 426", "Formal Methods in Software Development", 4, 4, 0, false, 40,
+                "B. Çelikkale", "Thursday", "12:00-13:20"));
+        fourthYear.addCourse(new Course("SENG 491", "Graduation Project I", 4, 1, 4, false, 40, "S. Esmelioglu",
+                "Friday", "15:00-16:20"));
         departmentSchedules.add(fourthYear);
     }
 
@@ -122,7 +148,7 @@ class BeePlanSystem {
     }
 
     private void assignClassroomAndTimeSlot(Course course) {
-        String[] classrooms = {"Classroom 101", "Classroom 102", "Lab 201", "Lab 202"};
+        String[] classrooms = { "Classroom 101", "Classroom 102", "Lab 201", "Lab 202" };
         String assignedClassroom = classrooms[new Random().nextInt(classrooms.length)];
 
         // Dersin günü ve saatine göre atama yapılır
@@ -152,18 +178,22 @@ class BeePlanSystem {
     // Tabloyu yazdırma
     public void printSchedule() {
         System.out.println("Ders Programı:");
-        String[] days = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
-        String[] times = {"09:20-10:10", "10:20-11:10", "11:20-12:10", "12:00-13:10", "13:20-14:10", "14:20-15:10", "15:20-16:10", "16:20-17:10"};
+        String[] days = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" };
+        String[] times = { "09:20-10:10", "10:20-11:10", "11:20-12:10", "12:00-13:10", "13:20-14:10", "14:20-15:10",
+                "15:20-16:10", "16:20-17:10" };
 
-        // Tabloyu yazdırmak
+        // Başlıkları yazdırıyoruz (Günler)
         for (String day : days) {
             System.out.print(day + "\t");
         }
         System.out.println();
-        
+
+        // Saat dilimlerine göre derslerin yerleşimini yapıyoruz
         for (String time : times) {
+            System.out.print(time + "\t");
             for (String day : days) {
-                String courseInfo = getCourseInfo(day, time); // Burada, ilgili ders bilgilerini almak için metod ekleyebilirsiniz
+                String courseInfo = getCourseInfo(day, time); // Burada, ilgili ders bilgilerini almak için metod
+                                                              // ekleyebilirsiniz
                 System.out.print(courseInfo + "\t");
             }
             System.out.println();
@@ -218,7 +248,9 @@ class Course {
     private String assignedDay;
     private String assignedTimeSlot;
 
-    public Course(String courseCode, String courseName, int yearLevel, int theoreticalHours, int practicalHours, boolean isCommonCourse, int maxLabCapacity, String instructor, String assignedDay, String assignedTimeSlot) {
+    public Course(String courseCode, String courseName, int yearLevel, int theoreticalHours, int practicalHours,
+            boolean isCommonCourse, int maxLabCapacity, String instructor, String assignedDay,
+            String assignedTimeSlot) {
         this.courseCode = courseCode;
         this.courseName = courseName;
         this.yearLevel = yearLevel;
