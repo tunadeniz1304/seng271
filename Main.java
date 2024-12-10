@@ -1,6 +1,5 @@
 import java.util.*;
 
-// Main Class for System Execution
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -18,11 +17,13 @@ public class Main {
         system.checkConstraints();  // Kısıtlamaları kontrol et
         system.resolveConflicts(); // Çakışmaları çöz
 
+        // Tabloyu terminalde yazdırma
+        system.printSchedule(); // Tabloyu yazdır
+
         scanner.close();
     }
 }
 
-// Main System Class
 class BeePlanSystem {
     private List<DepartmentSchedule> departmentSchedules;
     private List<Instructor> instructors;
@@ -77,7 +78,6 @@ class BeePlanSystem {
         firstYear.addCourse(new Course("SENG 102", "Computer Programming II", 1, 3, 2, false, 40, "S. K. Tunç", "Thursday", "09:20-11:20"));
         departmentSchedules.add(firstYear);
     }
-
     private void addSecondYearCourses() {
         DepartmentSchedule secondYear = new DepartmentSchedule("2nd Year", "2024-2025", "SENG");
         secondYear.addCourse(new Course("PHYS 132", "Physics II", 2, 3, 2, true, 40, "Physics Instructor", "Tuesday", "09:20-12:20"));
@@ -148,6 +148,39 @@ class BeePlanSystem {
         System.out.println("Resolving conflicts...");
         System.out.println("Conflicts resolved successfully!");
     }
+
+    // Tabloyu yazdırma
+    public void printSchedule() {
+        System.out.println("Ders Programı:");
+        String[] days = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
+        String[] times = {"09:20-10:10", "10:20-11:10", "11:20-12:10", "12:00-13:10", "13:20-14:10", "14:20-15:10", "15:20-16:10", "16:20-17:10"};
+
+        // Tabloyu yazdırmak
+        for (String day : days) {
+            System.out.print(day + "\t");
+        }
+        System.out.println();
+        
+        for (String time : times) {
+            for (String day : days) {
+                String courseInfo = getCourseInfo(day, time); // Burada, ilgili ders bilgilerini almak için metod ekleyebilirsiniz
+                System.out.print(courseInfo + "\t");
+            }
+            System.out.println();
+        }
+    }
+
+    // Ders bilgilerini almak için yardımcı metod
+    private String getCourseInfo(String day, String time) {
+        for (DepartmentSchedule schedule : departmentSchedules) {
+            for (Course course : schedule.getCourses()) {
+                if (course.getAssignedDay().equals(day) && course.getAssignedTimeSlot().equals(time)) {
+                    return course.getCourseName() + " - " + course.getInstructor();
+                }
+            }
+        }
+        return "";
+    }
 }
 
 // Supporting Classes
@@ -182,8 +215,8 @@ class Course {
     private boolean isCommonCourse;
     private int maxLabCapacity;
     private String instructor;
-    private String assignedDay; // Eklenen gün özelliği
-    private String assignedTimeSlot; // Eklenen zaman dilimi
+    private String assignedDay;
+    private String assignedTimeSlot;
 
     public Course(String courseCode, String courseName, int yearLevel, int theoreticalHours, int practicalHours, boolean isCommonCourse, int maxLabCapacity, String instructor, String assignedDay, String assignedTimeSlot) {
         this.courseCode = courseCode;
