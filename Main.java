@@ -69,44 +69,44 @@ class BeePlanSystem {
 
     private void addFirstYearCourses() {
         DepartmentSchedule firstYear = new DepartmentSchedule("1st Year", "2024-2025", "SENG");
-        firstYear.addCourse(new Course("PHYS 131", "Physics I", 1, 3, 2, true, 40, "Instructor7", "Monday", "09:20-11:20"));
-        firstYear.addCourse(new Course("ENG 121", "Academic English I", 1, 3, 0, true, 40, "Instructor9", "Tuesday", "09:20-12:20"));
-        firstYear.addCourse(new Course("MATH 157", "Calculus I", 1, 4, 0, true, 40, "Instructor8", "Monday", "13:20-15:20"));
-        firstYear.addCourse(new Course("SENG 101", "Computer Programming I", 1, 3, 2, false, 40, "Instructor3", "Tuesday", "12:00-13:20"));
-        firstYear.addCourse(new Course("SENG 102", "Computer Programming II", 1, 3, 2, false, 40, "Instructor3", "Thursday", "09:20-11:20"));
+        firstYear.addCourse(new Course("PHYS 131", "Physics I", 1, 3, 2, true, 40, "B. Avenoglu", "Monday", "09:20-11:20"));
+        firstYear.addCourse(new Course("ENG 121", "Academic English I", 1, 3, 0, true, 40, "B. Çelikkale", "Tuesday", "09:20-12:20"));
+        firstYear.addCourse(new Course("MATH 157", "Calculus I", 1, 4, 0, true, 40, "S. Esmelioglu", "Monday", "13:20-15:20"));
+        firstYear.addCourse(new Course("SENG 101", "Computer Programming I", 1, 3, 2, false, 40, "S. K. Tunç", "Tuesday", "12:00-13:20"));
+        firstYear.addCourse(new Course("SENG 102", "Computer Programming II", 1, 3, 2, false, 40, "S. K. Tunç", "Thursday", "09:20-11:20"));
         departmentSchedules.add(firstYear);
     }
 
     private void addSecondYearCourses() {
         DepartmentSchedule secondYear = new DepartmentSchedule("2nd Year", "2024-2025", "SENG");
-        secondYear.addCourse(new Course("PHYS 132", "Physics II", 2, 3, 2, true, 40, "Instructor7", "Tuesday", "09:20-12:20"));
-        secondYear.addCourse(new Course("MATH 223", "Discrete Structures", 2, 3, 0, true, 40, "Instructor8", "Monday", "12:20-13:20"));
-        secondYear.addCourse(new Course("MATH 158", "Calculus II", 2, 4, 0, true, 40, "Instructor8", "Wednesday", "09:20-11:20"));
-        secondYear.addCourse(new Course("HIST 201", "History of Turkish Revolution I", 2, 2, 0, true, 40, "Instructor10", "Tuesday", "13:20-14:20"));
-        secondYear.addCourse(new Course("SENG 201", "Data Structures", 2, 3, 2, false, 40, "Instructor2", "Thursday", "09:20-12:20"));
-        secondYear.addCourse(new Course("SENG 203", "Discrete Structures", 2, 3, 0, false, 40, "Instructor2", "Thursday", "13:20-15:20"));
-        secondYear.addCourse(new Course("SENG 206", "Software Design", 2, 3, 0, false, 40, "Instructor4", "Wednesday", "13:20-15:20"));
-        secondYear.addCourse(new Course("SENG 271", "Software Project I", 2, 2, 0, false, 40, "Instructor4", "Tuesday", "15:20-17:20"));
+        secondYear.addCourse(new Course("PHYS 132", "Physics II", 2, 3, 2, true, 40, "Physics Instructor", "Tuesday", "09:20-12:20"));
+        secondYear.addCourse(new Course("MATH 223", "Discrete Structures", 2, 3, 0, true, 40, "Math Instructor", "Monday", "12:20-13:20"));
+        secondYear.addCourse(new Course("MATH 158", "Calculus II", 2, 4, 0, true, 40, "Math Instructor", "Wednesday", "09:20-11:20"));
+        secondYear.addCourse(new Course("HIST 201", "History of Turkish Revolution I", 2, 2, 0, true, 40, "History Instructor", "Tuesday", "13:20-14:20"));
+        secondYear.addCourse(new Course("SENG 201", "Data Structures", 2, 3, 2, false, 40, "B. Çelikkale", "Thursday", "09:20-12:20"));
+        secondYear.addCourse(new Course("SENG 203", "Discrete Structures", 2, 3, 0, false, 40, "B. Çelikkale", "Thursday", "13:20-15:20"));
+        secondYear.addCourse(new Course("SENG 206", "Software Design", 2, 3, 0, false, 40, "S. K. Tunç", "Wednesday", "13:20-15:20"));
+        secondYear.addCourse(new Course("SENG 271", "Software Project I", 2, 2, 0, false, 40, "S. K. Tunç", "Tuesday", "15:20-17:20"));
         departmentSchedules.add(secondYear);
     }
 
     private void addThirdYearCourses() {
         DepartmentSchedule thirdYear = new DepartmentSchedule("3rd Year", "2024-2025", "SENG");
-        thirdYear.addCourse(new Course("MATH 205", "Linear Algebra", 3, 3, 0, true, 40, "Instructor8", "Wednesday", "09:20-12:20"));
-        thirdYear.addCourse(new Course("HIST 202", "History of Turkish Revolution II", 3, 2, 0, true, 40, "Instructor10", "Friday", "10:20-11:20"));
-        thirdYear.addCourse(new Course("SENG 301", "Software Project Management", 3, 2, 2, false, 40, "Instructor4", "Friday", "13:20-15:20"));
-        thirdYear.addCourse(new Course("SENG 303", "Software Testing for Quality Assurance", 3, 3, 0, false, 40, "Instructor3", "Thursday", "15:00-16:20"));
-        thirdYear.addCourse(new Course("SENG 315", "Concurrent Programming", 3, 3, 0, false, 40, "Instructor1", "Monday", "15:00-16:20"));
-        thirdYear.addCourse(new Course("SENG 383", "Software Project III", 3, 2, 0, false, 40, "Instructor2", "Wednesday", "13:20-15:20"));
+        thirdYear.addCourse(new Course("MATH 205", "Linear Algebra", 3, 3, 0, true, 40, "Math Instructor", "Wednesday", "09:20-12:20"));
+        thirdYear.addCourse(new Course("HIST 202", "History of Turkish Revolution II", 3, 2, 0, true, 40, "History Instructor", "Friday", "10:20-11:20"));
+        thirdYear.addCourse(new Course("SENG 301", "Software Project Management", 3, 2, 2, false, 40, "S. K. Tunç", "Friday", "13:20-15:20"));
+        thirdYear.addCourse(new Course("SENG 303", "Software Testing for Quality Assurance", 3, 3, 0, false, 40, "B. Avenoglu", "Thursday", "15:00-16:20"));
+        thirdYear.addCourse(new Course("SENG 315", "Concurrent Programming", 3, 3, 0, false, 40, "B. Avenoglu", "Monday", "15:00-16:20"));
+        thirdYear.addCourse(new Course("SENG 383", "Software Project III", 3, 2, 0, false, 40, "B. Çelikkale", "Wednesday", "13:20-15:20"));
         departmentSchedules.add(thirdYear);
     }
 
     private void addFourthYearCourses() {
         DepartmentSchedule fourthYear = new DepartmentSchedule("4th Year", "2024-2025", "SENG");
-        fourthYear.addCourse(new Course("CENG 464", "Artificial Intelligence", 4, 3, 0, false, 40, "Instructor5", "Monday", "09:20-12:20"));
-        fourthYear.addCourse(new Course("CENG 346", "Computer Graphics", 4, 3, 0, false, 40, "Instructor6", "Wednesday", "09:20-12:20"));
-        fourthYear.addCourse(new Course("SENG 426", "Formal Methods in Software Development", 4, 4, 0, false, 40, "Instructor2", "Thursday", "12:00-13:20"));
-        fourthYear.addCourse(new Course("SENG 491", "Graduation Project I", 4, 1, 4, false, 40, "Instructor3", "Friday", "15:00-16:20"));
+        fourthYear.addCourse(new Course("CENG 464", "Artificial Intelligence", 4, 3, 0, false, 40, "N. Çağıltay", "Monday", "09:20-12:20"));
+        fourthYear.addCourse(new Course("CENG 346", "Computer Graphics", 4, 3, 0, false, 40, "T. Karadeniz", "Wednesday", "09:20-12:20"));
+        fourthYear.addCourse(new Course("SENG 426", "Formal Methods in Software Development", 4, 4, 0, false, 40, "B. Çelikkale", "Thursday", "12:00-13:20"));
+        fourthYear.addCourse(new Course("SENG 491", "Graduation Project I", 4, 1, 4, false, 40, "S. Esmelioglu", "Friday", "15:00-16:20"));
         departmentSchedules.add(fourthYear);
     }
 
