@@ -69,7 +69,8 @@ class BeePlanSystem {
 
     private void addFirstYearCourses() {
         DepartmentSchedule firstYear = new DepartmentSchedule("1st Year", "2024-2025", "SENG");
-        firstYear.addCourse(new Course("PHYS 131", "Physics I", 1, 3, 2, true, 40, "B. Avenoglu", "Monday", "09:20-11:20"));
+        firstYear.addCourse(new Course("PHYS 131", "Physics I", 1, 3, 2, true, 40, "B. Avenoglu", "Monday", "09:20-10:10"));
+        firstYear.addCourse(new Course("PHYS 131", "Physics I", 1, 3, 2, true, 40, "B. Avenoglu", "Monday", "10:20-11:10"));
         firstYear.addCourse(new Course("ENG 121", "Academic English I", 1, 3, 0, true, 40, "B. Çelikkale", "Tuesday", "09:20-12:20"));
         firstYear.addCourse(new Course("MATH 157", "Calculus I", 1, 4, 0, true, 40, "S. Esmelioglu", "Monday", "13:20-15:20"));
         firstYear.addCourse(new Course("SENG 101", "Computer Programming I", 1, 3, 2, false, 40, "S. K. Tunç", "Tuesday", "12:00-13:20"));
