@@ -21,6 +21,8 @@ class Instructor {
 
     public boolean isExternal() {
         return isExternal;
+
+        
     }
 
     public String getPersonalSchedule() {
